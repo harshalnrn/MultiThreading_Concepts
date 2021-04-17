@@ -1,4 +1,4 @@
-package synchronization.bean_class_block_lock_demo;
+package synchronization.bean_class_lock_demo;
 
 public class Synhronised_Bean_Class_Locking_Thread1 extends Thread {
     SharedDisplayClassMessage sharedDisplayClassMessage;

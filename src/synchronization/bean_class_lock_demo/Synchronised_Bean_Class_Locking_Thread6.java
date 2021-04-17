@@ -1,4 +1,4 @@
-package synchronization.bean_class_block_lock_demo;
+package synchronization.bean_class_lock_demo;
 
 public class Synchronised_Bean_Class_Locking_Thread6 extends Thread {
 

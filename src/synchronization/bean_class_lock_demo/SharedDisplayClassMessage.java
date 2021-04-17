@@ -1,4 +1,4 @@
-package synchronization.bean_class_block_lock_demo;
+package synchronization.bean_class_lock_demo;
 //this class has synch instance, synch static, synch block members
 public class SharedDisplayClassMessage {
 

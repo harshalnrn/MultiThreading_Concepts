@@ -1,3 +1,4 @@
 https://www.baeldung.com/java-wait-notify
+https://www.geeksforgeeks.org/difference-between-wait-and-sleep-in-java/
 Note:Given the difficulty of using wait and notify correctly, you should use the higher-level concurrency utilities instead.
-     Java 1.5 introduced a new concurrency library (in the java.util.concurrent package) which was designed to provide a higher level abstraction over the wait/notify mechanism
+Java 1.5 introduced a new concurrency library (in the java.util.concurrent package) which was designed to provide a higher level abstraction over the wait/notify mechanism

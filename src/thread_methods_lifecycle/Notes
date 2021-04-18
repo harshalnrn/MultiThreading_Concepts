@@ -1,0 +1,24 @@
+1. Explain Thread lifecycle
+
+                     |<--------------- yield()-----|
+New --start()--->  Runnable -----run()---(also join()-->run() )-------->      Running  -----run() completed  called------>   Terminated
+                    |                 sleep()|      wait()|
+                    <---------------[Timed waiting]    [Waiting]
+                    <-------------------------------------|
+                                          |---------------------------------------------- interrupted() -------------------------------|
+note the possible cyclic loops in thread lifecycle.
+
+2. Creating a new Thread (i.e extend Thread class or implement Runnable interface. run() to be overriden to have run logic.
+3. Thread class methods:
+start()
+run()
+sleep(int milliseconds)
+wait()
+join()
+yield()
+interrupt()
+setPriority(int priority)    (priority ranges from 1 (min) to 10(max)). by default, all threads have 5 priority(norm)
+getPriority()
+currentThread().getName() / setName()
+4. Thread Priority Schduling algorithm
+5. Terms like Race condition, Mutual exclusion, Deadlock.

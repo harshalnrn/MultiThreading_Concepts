@@ -6,7 +6,9 @@ public class InterruptingThreadExample extends  Thread {
         try{
            for (int i=0;i<10;i++){
                System.out.println("I am a lazy thread");
-               Thread.sleep(2000);
+               if(i==5) {
+                   Thread.sleep(2000);
+               }
            }
         }
         catch(InterruptedException e){

@@ -6,6 +6,7 @@ public class Thread_Join_Demo extends Thread {
 
     static int n, sum = 0;
 
+
     public static void main(String[] args) throws InterruptedException {
 long start=System.currentTimeMillis();
         Scanner scanner = new Scanner(System.in);
@@ -14,16 +15,25 @@ long start=System.currentTimeMillis();
 
         Thread_Join_Demo thread = new Thread_Join_Demo();
         thread.start();
-       thread.join();//overrides threading and makes a particular thread get completed with overall aggregated result if any om priority and reach dead state, before allowing other threads to resume.
+
+        thread.join();
+        for(int i=0;i<200;i++){
+            System.out.println(Thread.currentThread().getName());
+        }
+
 
 
     }
 
     @Override
     public void run() {
+        for(int i=0;i>100;i++){
+            System.out.println(Thread.currentThread().getName());
+        }
+
         for (int i = 1; i <= n; i++) {
             sum += i;
-            System.out.println("Thread name: " + Thread.currentThread().getName() + "i: "+i);
+            System.out.println("Thread name: " + Thread.currentThread().getName() + " i: "+i);
         }
         System.out.println("Thread name: " + Thread.currentThread().getName() + " Sum " + sum);
         try{

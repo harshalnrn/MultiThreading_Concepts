@@ -1,16 +1,21 @@
 package fork_join;
 
-public class Array_Sum_Recursion {
+
+/**
+ * Decrease and Conquer recursive aproach
+ *
+ */
+public class  Array_Sum_Recursion {
 
 
     public static void main(String[] args) {
         int a[] = {1, 2, 3, 4, 5};
-        System.out.println(sum(a, 0));
-        System.out.println(sum1(a, a.length));
+        System.out.println(sum(a, 0)); //from start index
+        System.out.println(sum1(a, a.length)); //from last index.
     }
 
 
-    // recursive function: left to right
+    // recursive function: left to right of array elements.
 
     public static int sum(int[] a, int startIndex) {
 
@@ -18,8 +23,10 @@ public class Array_Sum_Recursion {
         if (startIndex >= a.length) {
             return 0;
         }
-        return a[startIndex] + sum(a, startIndex + 1);
+        return a[startIndex] + sum(a, startIndex + 1); // array keeps getting small from left to right
     }
+
+    //recursive function: right to left of array elements.
 
     public static int sum1(int[] a, int length) {
         //termination condition

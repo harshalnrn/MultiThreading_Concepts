@@ -1,3 +1,4 @@
+IPC follows a sender-receiver synchronous pattern, via a resource object.
 https://www.baeldung.com/java-wait-notify
 https://www.geeksforgeeks.org/difference-between-wait-and-sleep-in-java/
 Note:Given the difficulty of using wait and notify correctly, you should use the higher-level concurrency utilities instead.

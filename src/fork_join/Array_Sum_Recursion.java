@@ -2,7 +2,7 @@ package fork_join;
 
 
 /**
- * Decrease and Conquer recursive aproach
+ * Divide/Decrease and Conquer recursive aproach
  *
  */
 public class  Array_Sum_Recursion {

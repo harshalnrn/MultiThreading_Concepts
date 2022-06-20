@@ -1,8 +1,11 @@
 http://tutorials.jenkov.com/java-concurrency/synchronized.html#synchronized-blocks-instance-methods
 https://www.geeksforgeeks.org/method-block-synchronization-java/
 Synchronizing any portion of code, is basically making multiple threads access and execute it ONE AT A TIME ONLY.
-This needs to be done for shared resources to make code Thread safe. Basically mutable resources(add,update, delete) of objects should have synchronised and others(read) left as it is
+This needs to be done for shared resources to make code Thread safe(static resources, singletone bean...etc)..... Mostly mutable operation (add,update, delete) of objects should have synchronised and others(read) left as it is
 
-1. Synchronized instance method: bean lock until entire instance method executed by current thread
-2. Synchronised block : monitor bean lock until entire block executed by current method
-3. Synchronised static method : class lock until entire static method executed by current thread.
+1. Synchronized instance method/variable: complete bean lock until entire instance method executed by current thread
+2. Synchronised block : complete bean lock until entire block executed by current method
+3. Synchronised static method/variable : complete class lock until entire static method executed by current thread.
+4. Synchronised static block: complete class lock until entire static block executed by current thread
+
+Other mechanisms, such as reads and writes of volatile variables and the use of classes in the java.util.concurrent package, provide alternative ways of synchronization

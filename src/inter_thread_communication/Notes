@@ -1,4 +1,7 @@
 IPC follows a sender-receiver synchronous pattern, via a resource object.
+IPC: Parent-child wait-notify cycle: Object.wait() to pause a thread, and give up lock on Object
+                                     Object.notify()/notifyAll() to notify and wake the parent threads to resume usage of the obje
+
 https://www.baeldung.com/java-wait-notify
 https://www.geeksforgeeks.org/difference-between-wait-and-sleep-in-java/
 Note:Given the difficulty of using wait and notify correctly, you should use the higher-level concurrency utilities instead.

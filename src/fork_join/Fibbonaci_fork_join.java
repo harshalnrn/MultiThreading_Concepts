@@ -49,7 +49,7 @@ public class Fibbonaci_fork_join extends RecursiveTask<Integer> {
             fibboSeqNumber = index;
             return fibboSeqNumber;
         } else {
-            //split into subtasks, based upon fibonacci rule:
+            //split the parent tasks into subtasks, based upon fibonacci rule:
             Fibbonaci_fork_join task1 = new Fibbonaci_fork_join(getIndex() - 1);
             Fibbonaci_fork_join task2 = new Fibbonaci_fork_join(getIndex() - 2);
 // so subtasks operation gets divided among multiple threads via fork-join framework, as they are independent of each other.S
@@ -63,7 +63,7 @@ public class Fibbonaci_fork_join extends RecursiveTask<Integer> {
             // task objects handling is divided among these threads, till fibSeqNumber of each task gets computed.
 
             // add the total to both tasks
-            fibboSeqNumber = task1.join() + task2.join(); //fibonacci rule
+            fibboSeqNumber = task1.join() + task2.join(); //fibonacci rule // join is final return value of compute method of corresponding task
         }
         return fibboSeqNumber;
     }

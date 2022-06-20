@@ -9,9 +9,10 @@ import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveTask;
 
 /**
- * Application of fork-join framework where we run multithreads concurrently (i.e parallel /non-parallel)
+ * Application of fork-join framework where we split tasks into subtasks and run multithreads concurrently (i.e parallel /non-parallel)
  */
 public class SearchTask extends RecursiveTask<Integer> {
+    //Divinding array into 2 arrays
     int arr[];
     int start, end;
     int searchEle;
@@ -31,7 +32,7 @@ public class SearchTask extends RecursiveTask<Integer> {
         int midIndex = (start + end) / 2; // mid index keeps changing since start/end changes in recursive call.
 
 
-      //split condition aplying to both tasks.
+        //split condition aplying to both tasks.
 
        /* if ( start!=end) {
             fork_join.SearchTask task1 = new fork_join.SearchTask(arr, start, midIndex, searchEle); //task1 obj
@@ -50,9 +51,9 @@ public class SearchTask extends RecursiveTask<Integer> {
         }*/
 
         // finding total sum  by dividing array in pieces=n
-       //base termination condition
-        if (start==end) {
-            sum= arr[start]; // recursion end
+        //base termination condition
+        if (start == end) {
+            sum = arr[start]; // recursion end
         } else {
 
             SearchTask task1 = new SearchTask(arr, start, midIndex, searchEle); //further divide left side
@@ -65,7 +66,6 @@ public class SearchTask extends RecursiveTask<Integer> {
         return sum;
 
     }
-
 
 
     private Integer calculateOcuurance() {
@@ -82,15 +82,15 @@ public class SearchTask extends RecursiveTask<Integer> {
     public static void main(String[] args) {
         //search and calculate number of occurance in array.
 
-        int[] a = {2, 3, 4,6,7,7,7};
+        int[] a = {2, 3, 4, 6, 7, 7, 7};
         int start = 0;
         int end = a.length - 1;
         int searchEle = 7;
-       // ForkJoinPool forkJoinPool = ForkJoinPool.commonPool();
+        // ForkJoinPool forkJoinPool = ForkJoinPool.commonPool();
         SearchTask searchTask = new SearchTask(a, start, end, searchEle);
 
-     //   int result = forkJoinPool.invoke(searchTask);
-      //  System.out.print(result);
+        //   int result = forkJoinPool.invoke(searchTask);
+        //  System.out.print(result);
         System.out.println(searchTask.compute());
     }
 }

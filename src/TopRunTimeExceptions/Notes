@@ -1,0 +1,14 @@
+https://javaconceptoftheday.com/classcastexception-in-java/#:~:text=ClassCastException%20occurs%20when%20code%20has,one%20more%20case%20of%20ClassCastException.
+
+Top runtime exceptions:
+
+NullPointerException
+ClassCastException
+IndexOutOfBoundException
+ArrayIndexOutOfBoundException
+StringIndexOutOfBoundException
+------------------
+NumberFormatException
+ArithmeticException
+IllegalArgumentException
+IllegalStateException
